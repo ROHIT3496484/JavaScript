@@ -9,7 +9,7 @@ Array.prototype.myforeach = function (callback) {
   if (!callback) {
     throw Error("Error  undefined");
   }
-  const arr = this;
+  const arr = this; //here the this keyword(myarray) is used for the array, which we are calling from outside
   for (let i = 0; i < arr.length; i++) {
     callback(arr[i], i, arr);
   }
