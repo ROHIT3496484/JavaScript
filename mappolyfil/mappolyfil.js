@@ -8,6 +8,7 @@ Array.prototype.mymap = function (callback) {
   if (!callback) {
     throw Error("you are not using callback");
   }
+  var arr = this;
   let newarr = [];
   for (let i = 0; i < arr.length; i++) {
     const result = callback(arr[i], i, arr);
