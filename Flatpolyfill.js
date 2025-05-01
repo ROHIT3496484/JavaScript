@@ -30,3 +30,20 @@ a.flat();
 //(4) [1, 2, 3, 4]
 a.myflat();
 //(4) [1, 2, 3, 4]
+
+
+Array.prototype.myflatiterative = function () {
+    const stack = [...this];
+    const result = [];
+    while(stack.length){
+        const popedElem = stack.pop();
+        if(Array.isArray(popedElem)){
+            stack.push(...popedElem);
+        }
+        else{
+            result.push(popedElem);
+        }
+    }
+    return result;
+    
+}
